@@ -231,7 +231,12 @@ public class VirusGUI extends JFrame implements ActionListener {
             virus2Lijst = new ArrayList<>(VirusLogica.hosts.get(host2));
             virus1Lijst.removeIf(virus -> !virus.getClassificatie().equals((String) comboBoxMidden.getSelectedItem()));
             virus2Lijst.removeIf(virus -> !virus.getClassificatie().equals((String) comboBoxMidden.getSelectedItem()));
-
+            Collections.sort(virus1Lijst);
+            Collections.sort(virus2Lijst);
+            HashSet overlap = new HashSet(virus1Lijst);
+            overlap.retainAll(virus2Lijst);
+            ArrayList<Virus> overlapList = new ArrayList(overlap);
+            
             textAreaVirus1.setText("");
             ArrayList<Integer> dubbelChecker1 = new ArrayList<>();
             virus1Lijst.forEach((Virus virus) -> {
@@ -252,7 +257,7 @@ public class VirusGUI extends JFrame implements ActionListener {
 
             textAreaOverlap.setText("");
             ArrayList<Integer> dubbelChecker3 = new ArrayList<>();
-            virus1Lijst.forEach((Virus virus) -> {
+            overlapList.forEach((Virus virus) -> {
                 if (!dubbelChecker3.contains(virus.getVirusID())) {
                     dubbelChecker3.add(virus.getVirusID());
                     textAreaOverlap.append(virus.getVirusID() + "\n");
@@ -289,7 +294,7 @@ public class VirusGUI extends JFrame implements ActionListener {
 
             textAreaOverlap.setText("");
             ArrayList<Integer> dubbelChecker3 = new ArrayList<>();
-            virus1Lijst.forEach((Virus virus) -> {
+            overlapList.forEach((Virus virus) -> {
                 if (!dubbelChecker3.contains(virus.getVirusID())) {
                     dubbelChecker3.add(virus.getVirusID());
                     textAreaOverlap.append(virus.getVirusID() + "\n");
@@ -326,7 +331,7 @@ public class VirusGUI extends JFrame implements ActionListener {
 
             textAreaOverlap.setText("");
             ArrayList<Integer> dubbelChecker3 = new ArrayList<>();
-            virus1Lijst.forEach((Virus virus) -> {
+            overlapList.forEach((Virus virus) -> {
                 if (!dubbelChecker3.contains(virus.getVirusID())) {
                     dubbelChecker3.add(virus.getVirusID());
                     textAreaOverlap.append(virus.getVirusID() + "\n");
@@ -364,7 +369,7 @@ public class VirusGUI extends JFrame implements ActionListener {
 
             textAreaOverlap.setText("");
             ArrayList<Integer> dubbelChecker3 = new ArrayList<>();
-            virus1Lijst.forEach((Virus virus) -> {
+            overlapList.forEach((Virus virus) -> {
                 if (!dubbelChecker3.contains(virus.getVirusID())) {
                     dubbelChecker3.add(virus.getVirusID());
                     textAreaOverlap.append(virus.getVirusID() + "\n");
