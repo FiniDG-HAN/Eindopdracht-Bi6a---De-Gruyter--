@@ -79,9 +79,9 @@ public class VirusLogica {
             inFile.close();
 
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Bestand kan niet gelezen worden");
+            JOptionPane.showMessageDialog(null, "Bestand kan niet gelezen worden, ga naar:ftp://ftp.genome.jp/pub/db/virushostdb/ en download het tsv bestand");
         } catch (ArrayIndexOutOfBoundsException a) {
-            JOptionPane.showMessageDialog(null, "Bestand kan niet gelezen worden");
+            JOptionPane.showMessageDialog(null, "Bestand kan niet gelezen worden, ga naar:ftp://ftp.genome.jp/pub/db/virushostdb/ en download het tsv bestand");
         } catch (Exception e) {
             System.out.println("Onbekende fout: raadpleeg uw systeembeheerder");
         }

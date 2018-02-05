@@ -236,6 +236,7 @@ public class VirusGUI extends JFrame implements ActionListener {
             HashSet overlap = new HashSet(virus1Lijst);
             overlap.retainAll(virus2Lijst);
             ArrayList<Virus> overlapList = new ArrayList(overlap);
+            Collections.sort(overlapList);
             
             textAreaVirus1.setText("");
             ArrayList<Integer> dubbelChecker1 = new ArrayList<>();
@@ -273,6 +274,7 @@ public class VirusGUI extends JFrame implements ActionListener {
             HashSet overlap = new HashSet(virus1Lijst);
             overlap.retainAll(virus2Lijst);
             ArrayList<Virus> overlapList = new ArrayList(overlap);
+            Collections.sort(overlapList);
 
             textAreaVirus1.setText("");
             ArrayList<Integer> dubbelChecker1 = new ArrayList<>();
@@ -310,6 +312,7 @@ public class VirusGUI extends JFrame implements ActionListener {
             HashSet overlap = new HashSet(virus1Lijst);
             overlap.retainAll(virus2Lijst);
             ArrayList<Virus> overlapList = new ArrayList(overlap);
+            Collections.sort(overlapList);
 
             textAreaVirus1.setText("");
             ArrayList<Integer> dubbelChecker1 = new ArrayList<>();
@@ -348,6 +351,7 @@ public class VirusGUI extends JFrame implements ActionListener {
             HashSet overlap = new HashSet(virus1Lijst);
             overlap.retainAll(virus2Lijst);
             ArrayList<Virus> overlapList = new ArrayList(overlap);
+            Collections.sort(overlapList);
 
             textAreaVirus1.setText("");
             ArrayList<Integer> dubbelChecker1 = new ArrayList<>();
